@@ -5,17 +5,17 @@
   
   <title>麻省理工线性代数空间基坐标线性变换 | 柏舟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Share and Discover">
+  <meta name="description" content="关于吉尔伯特教授谈到的 A[输入向量坐标]=[输出空间坐标], 其中如何寻找矩阵A使这个式子成立，有这么一串公式： T(v~1~)=a~1~w~1~+a~2~w~2~+…+a~n~w~n~ 其中a~1~到a~n~是矩阵A的第一列。如何理解呢？在之前的例子中，T(v)=Av中使用的是标准基，即所有标准基向量组合成的矩阵是单位矩阵（相当于每个基向量系数为1），标准基就是其中的每一列。 如v~1~ =">
 <meta property="og:type" content="article">
 <meta property="og:title" content="麻省理工线性代数空间基坐标线性变换">
 <meta property="og:url" content="https://landerku.github.io/2019/05/16/麻省理工线性代数空间基坐标线性变换/index.html">
 <meta property="og:site_name" content="柏舟">
-<meta property="og:description" content="Share and Discover">
+<meta property="og:description" content="关于吉尔伯特教授谈到的 A[输入向量坐标]=[输出空间坐标], 其中如何寻找矩阵A使这个式子成立，有这么一串公式： T(v~1~)=a~1~w~1~+a~2~w~2~+…+a~n~w~n~ 其中a~1~到a~n~是矩阵A的第一列。如何理解呢？在之前的例子中，T(v)=Av中使用的是标准基，即所有标准基向量组合成的矩阵是单位矩阵（相当于每个基向量系数为1），标准基就是其中的每一列。 如v~1~ =">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-16T13:27:11.034Z">
+<meta property="og:updated_time" content="2019-05-17T09:08:07.067Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="麻省理工线性代数空间基坐标线性变换">
-<meta name="twitter:description" content="Share and Discover">
+<meta name="twitter:description" content="关于吉尔伯特教授谈到的 A[输入向量坐标]=[输出空间坐标], 其中如何寻找矩阵A使这个式子成立，有这么一串公式： T(v~1~)=a~1~w~1~+a~2~w~2~+…+a~n~w~n~ 其中a~1~到a~n~是矩阵A的第一列。如何理解呢？在之前的例子中，T(v)=Av中使用的是标准基，即所有标准基向量组合成的矩阵是单位矩阵（相当于每个基向量系数为1），标准基就是其中的每一列。 如v~1~ =">
   
   <link rel="stylesheet" href="/Landerku.github.io/css/index.css">
 </head>
@@ -65,7 +65,25 @@
   <h2 class="title">麻省理工线性代数空间基坐标线性变换</h2>
   <p class="sub">5月 16, 2019</p>
   <article class="content">
-    
+    <p>关于吉尔伯特教授谈到的 <strong>A[输入向量坐标]=[输出空间坐标]</strong>, 其中如何寻找矩阵A使这个式子成立，有这么一串公式：</p>
+<p>T(v~1~)=a~1~w~1~+a~2~w~2~+…+a~n~w~n~</p>
+<p>其中a~1~到a~n~是矩阵A的第一列。如何理解呢？在之前的例子中，T(v)=Av中使用的是标准基，即所有标准基向量组合成的矩阵是单位矩阵（相当于每个基向量系数为1），标准基就是其中的每一列。</p>
+<p>如v~1~ = $$\begin{bmatrix}<br>1\<br>0\<br>\end{bmatrix}$$ ，v~2~ = $$\begin{bmatrix}<br>0\<br>1\<br>\end{bmatrix}$$ ,或 T(v) = v~1~+v~2~+…+v~n~</p>
+<p>但一般而言，基向量并不都是标准基，所以在进行坐标变换的时候难免产生其他数字，也就是上述提到的a~1~等。</p>
+<center><strong>A的每一列就是输出空间坐标系的基向量进行线性组合的系数</strong></center>
+
+<p>回到一般情况上，假设输入向量坐标v = c~1~v~1~+c~2~v~2~+…+c~n~v~n~组成，其中v~1~，v~2~到v~n~是输入空间的<strong>基向量</strong>，c~1~，c~2~到c~n~是这些基向量组合的<strong>系数</strong>，也即向量v在这个坐标系中的<strong>坐标(c~1~,c~2~,…c~n~)</strong>。</p>
+<p>对向量v做线性变换到另一个坐标系中，其本质就是对原坐标进行变换，变换为一组输出空间基向量的组合系数，也即输出空间的坐标。什么意思呢，就是这个式子：<font color="#ff0000"><strong>（注意：我们对其做线性变换时只关注坐标即系数，不关心基向量）</strong></font></p>
+<p>A$$\begin{bmatrix}<br>{c_{1}}\<br>{c_{2}}\<br>{\vdots}\<br>{c_{n}}\<br>\end{bmatrix}$$ = $$\begin{bmatrix}<br>{d_{1}}\<br>{d_{2}}\<br>{\vdots}\<br>{d_{m}}\<br>\end{bmatrix}$$ </p>
+<p>其中等式右边是V变换后W向量在输出空间的<strong>坐标（基向量系数）</strong>，如何理解呢？按照这个式子来思考： T(v~1~)=a~1~w~1~+a~2~w~2~+…+a~n~w~n~ ，其中只保留了v~1~，相当于矩阵A右乘的系数中只保留了v~1~的系数，即相当于A$$\begin{bmatrix}<br>{c_{1}}\<br>{0}\<br>{\vdots}\<br>{0}\<br>\end{bmatrix}$$，按照c~1~倍的A矩阵第一列加上0倍的其他列计算，c~1~被A矩阵变换为$$\begin{bmatrix}<br>{c_{1}a_{11}}\<br>{c_{1}a_{21}}\<br>{\vdots}\<br>{c_{1}a_{n1}}\<br>\end{bmatrix}$$，而这个矩阵的每一行即是将v~1~变换到新空间后w~1~,w~2~到w~n~的系数，即将原空间的某个坐标变换成了输出空间一系列基向量的系数。</p>
+<p>来看一道关于求导的例题。</p>
+<p>输入：c~1~+c~2~x+c~3~x^2^  输入基向量： 1, x, x^2^</p>
+<p>输出：c~2~+2c~3~x  输出基向量：1, x</p>
+<p>转换矩阵A = $$\begin{bmatrix}<br>{0}&amp;{1}&amp;{0}\<br>{0}&amp;{0}&amp;{2}\<br>\end{bmatrix}$$</p>
+<p>来看 A$$\begin{bmatrix}<br>{c_{1}}\<br>{c_{2}}\<br>{c_{3}}\<br>\end{bmatrix}$$ = $$\begin{bmatrix}<br>{c_{2}}\<br>2{c_{3}}\<br>\end{bmatrix}$$ 可以分解为$$\begin{bmatrix}<br>{0}c_{1}&amp;{1}c_{2}&amp;{0}c_{3}\<br>{0}c_{1}&amp;{0}c_{2}&amp;{2}c_{3}\<br>\end{bmatrix}$$ ，即将原坐标c~1~转换成了0，坐标c~2~转换成了c~2~未变，c~3~变为两倍。</p>
+<p> 即T(1) = 0乘以基向量1 + 0*基向量x, T(x) = c~2~乘以基向量1 + 0乘以基向量x，T（x^2^) = 0乘以基向量1 + 2c~3~乘以基向量x。</p>
+<p>所以求导其实也是一种线性变换，从几何角度来说，相当于把n维的图像投影到了n-1维上，进行了降维操作。</p>
+
   </article>
   <footer class="f-cf">
     
