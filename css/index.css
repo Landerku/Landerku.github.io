@@ -279,7 +279,7 @@ body {
           border-radius: 100%;
           background-color: #444; }
     .article > .content a {
-      color: #f0534e; }
+      color: #5B9DDC; }
     .article > .content strong {
       font-weight: 600; }
     .article > .content figure > img {
@@ -334,7 +334,7 @@ body {
     line-height: 24px; }
     .archive-category > .menu > li > a:hover {
       opacity: 1;
-      color: #f0534e; }
+      color: #5B9DDC; }
     .archive-category > .menu > li > span {
       opacity: .45;
       font-size: 14px;
