@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="柏舟">
 <meta property="og:description" content="注：1. 如加载出来的矩阵呈现错位，请在矩阵上右键——Math Settings——Math Render——Common Html即可。2. 如无法加载出公式及公式，请加载网页禁用脚本或选择查看全部内容。  关于吉尔伯特教授谈到的 A[输入向量坐标]=[输出空间坐标], 其中如何寻找矩阵A使这个式子成立，有这么一串公式：$T(v_1)=a_1w_1+a_2w_2+…+a_nw_n$ 其中a1到a">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-19T08:29:40.396Z">
+<meta property="og:updated_time" content="2019-05-19T08:43:04.950Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="麻省理工线代笔记：空间基坐标的线性代换">
 <meta name="twitter:description" content="注：1. 如加载出来的矩阵呈现错位，请在矩阵上右键——Math Settings——Math Render——Common Html即可。2. 如无法加载出公式及公式，请加载网页禁用脚本或选择查看全部内容。  关于吉尔伯特教授谈到的 A[输入向量坐标]=[输出空间坐标], 其中如何寻找矩阵A使这个式子成立，有这么一串公式：$T(v_1)=a_1w_1+a_2w_2+…+a_nw_n$ 其中a1到a">
@@ -91,7 +91,7 @@
 {\vdots}\\
 {d_{m}}\\
 \end{bmatrix}</script> </p>
-<p>其中等式右边是V变换后W向量在输出空间的<strong>坐标（基向量系数）</strong>，如何理解呢？按照这个式子来思考： <script type="math/tex">T(v_1)=a_1w_1+a_2w_2+...+a_nw_n</script><br>其中只保留了$v<em>1$，相当于矩阵A右乘的系数中只保留了$v_1$的系数，<br>即相当于$ A \begin{bmatrix}<br>{c</em>{1}}\<br>{0}\<br>{\vdots}\<br>{0}\<br>\end{bmatrix}$，按照$c<em>1$倍的A矩阵第一列加上0倍的其他列计算，$c_1$被A矩阵变换为$\begin{bmatrix}<br>{c</em>{1}a<em>{11}}\<br>{c</em>{1}a<em>{21}}\<br>{\vdots}\<br>{c</em>{1}a_{n1}}\<br>\end{bmatrix}$，而这个矩阵的每一行即是将$v_1$变换到新空间后$w_1,w_2$到$w_n$的系数，即将原空间的某个坐标变换成了输出空间一系列基向量的系数。</p>
+<p>其中等式右边是V变换后W向量在输出空间的<strong>坐标（基向量系数）</strong>，如何理解呢？按照这个式子来思考： <script type="math/tex">T(v_1)=a_1w_1+a_2w_2+...+a_nw_n</script>  其中只保留了$v_1$，相当于矩阵A右乘的系数中只保留了$v_1$的系数，<br>即相当于<br>$ A<br>\begin{bmatrix}<br>{c_{1}}\<br>{0}\<br>{\vdots}\<br>{0}\<br>\end{bmatrix}$，按照$c_1$倍的A矩阵第一列加上0倍的其他列计算，$c_1$被A矩阵变换为$\begin{bmatrix}<br>{c_{1}a_{11}}\<br>{c_{1}a_{21}}\<br>{\vdots}\<br>{c_{1}a_{n1}}\<br>\end{bmatrix}$，而这个矩阵的每一行即是将$v_1$变换到新空间后$w_1,w_2$到$w_n$的系数，即将原空间的某个坐标变换成了输出空间一系列基向量的系数。</p>
 <p>来看一道关于求导的例题。</p>
 <p>输入：$c_1+c_2x+c_3x^2$  输入基向量： $1, x, x^2$</p>
 <p>输出：$c_2+2c_3x$  输出基向量：1, x</p>
