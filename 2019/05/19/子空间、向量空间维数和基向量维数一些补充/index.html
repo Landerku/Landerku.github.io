@@ -5,17 +5,17 @@
   
   <title>子空间、向量空间维数和基向量维数一些补充 | 柏舟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="四个基本子空间的正交补先说结论：1. 行空间与零空间正交 ​                   2. 列空间与左零空间正交 非常容易混淆，由于Ax=0，非常容易认为列空间与零空间正交。实际上由于矩阵A   \begin{bmatrix}    a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n}\\    a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\">
+  <meta name="description" content="四个基本子空间的正交补先说结论：1. 行空间与零空间正交 ​                   2. 列空间与左零空间正交 非常容易混淆，由于Ax=0，非常容易认为列空间与零空间正交。实际上由于矩阵A  \begin{bmatrix}    a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n}\\    a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\">
 <meta property="og:type" content="article">
 <meta property="og:title" content="子空间、向量空间维数和基向量维数一些补充">
 <meta property="og:url" content="https://landerku.github.io/2019/05/19/子空间、向量空间维数和基向量维数一些补充/index.html">
 <meta property="og:site_name" content="柏舟">
-<meta property="og:description" content="四个基本子空间的正交补先说结论：1. 行空间与零空间正交 ​                   2. 列空间与左零空间正交 非常容易混淆，由于Ax=0，非常容易认为列空间与零空间正交。实际上由于矩阵A   \begin{bmatrix}    a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n}\\    a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\">
+<meta property="og:description" content="四个基本子空间的正交补先说结论：1. 行空间与零空间正交 ​                   2. 列空间与左零空间正交 非常容易混淆，由于Ax=0，非常容易认为列空间与零空间正交。实际上由于矩阵A  \begin{bmatrix}    a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n}\\    a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-19T07:29:06.933Z">
+<meta property="og:updated_time" content="2019-05-19T07:33:14.946Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="子空间、向量空间维数和基向量维数一些补充">
-<meta name="twitter:description" content="四个基本子空间的正交补先说结论：1. 行空间与零空间正交 ​                   2. 列空间与左零空间正交 非常容易混淆，由于Ax=0，非常容易认为列空间与零空间正交。实际上由于矩阵A   \begin{bmatrix}    a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n}\\    a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\">
+<meta name="twitter:description" content="四个基本子空间的正交补先说结论：1. 行空间与零空间正交 ​                   2. 列空间与左零空间正交 非常容易混淆，由于Ax=0，非常容易认为列空间与零空间正交。实际上由于矩阵A  \begin{bmatrix}    a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n}\\    a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\">
   
   <link rel="stylesheet" href="/Landerku.github.io/css/index.css">
 </head>
@@ -69,31 +69,31 @@
 <p>​                   <strong>2. 列空间与左零空间正交</strong></p>
 <p>非常容易混淆，由于Ax=0，非常容易认为列空间与零空间正交。实际上由于矩阵A</p>
 <script type="math/tex; mode=display">
- \begin{bmatrix}
+\begin{bmatrix}
    a_{11} & a_{12} & \cdots & a_{1n}\\
    a_{21} & a_{22} & \cdots & a_{2n} \\
    \vdots & \vdots & \ddots & \vdots \\
-   a_{m1} & a_{m2} & \cdots & a_{mn}
+   a_{m1} & a_{m2} & \cdots & a_{mn} \\
   \end{bmatrix} 
  \begin{bmatrix}
    x_{1} \\
    x_{2} \\
    \vdots \\
-   x_{n}
+   x_{n} \\
   \end{bmatrix} 
  =
  \begin{bmatrix}
    0 \\
    0 \\
    \vdots \\
-   0
+   0 \\
   \end{bmatrix}</script><p>可以看出，是A的列向量与相应的零空间中向量x的<strong>组合</strong>能得出0：</p>
 <script type="math/tex; mode=display">
- \begin{bmatrix}
+\begin{bmatrix}
    a_{11}*x_1 & + & a_{12}*x_2 & \cdots  + & a_{1n}*x_n \\
    a_{21}*x_1 &  + &a_{22}*x_2 & \cdots + & a_{2n}*x_n \\
    \vdots & \vdots & \ddots & \vdots \\
-   a_{m1}*x_1 &  + & a_{m2}*x_2 & \cdots + & a_{mn}*x_n
+   a_{m1}*x_1 &  + & a_{m2}*x_2 & \cdots + & a_{mn}*x_n \\
   \end{bmatrix} 
 
 = 
@@ -101,7 +101,7 @@
    0 \\
    0 \\
    \vdots \\
-   0
+   0 \\
   \end{bmatrix}</script><p>并不是每一列与相应x的乘积能得到0，而是每一列乘以相应x加起来的和可以得到0.因此，<strong>列空间与零空间并不正交！</strong></p>
 <p>再重新看每一行：由矩阵的乘法法则知道，矩阵的每一个元素a(i,j)由相应行i乘以相应列j得到，如果a(i,j)全为零，意味着这一行乘以这一列所有的元素都为0，这一行与这一列正交。由于x是一个列向量，那么即意味着：<strong>A的每一行都与x正交，才能得到全0.</strong>由此证明了结论1.</p>
 <p>同理，列空间相当于A转置后的行空间，式子写为$A^Ty=0$</p>
@@ -114,13 +114,13 @@ A=
    1 & 2 & 3 & 4 \\
    0 & 1 & 0 & 2 \\
    0 & 0 & 0 & 1 \\
-   0 & 0 & 0 & 0
+   0 & 0 & 0 & 0 \\
   \end{bmatrix}</script><p>为方便讲解已经化为阶梯形U。可以看出A有3个线性无关的列向量，即A的列向量空间维数就为3，这3个列向量就是列空间的一组基，基向量的个数3也是它们组成的向量空间维数。非常完美的符合了定义。</p>
 <p>那么什么是基向量的维数？即分量的个数，直观来说就是有多少行，比如A的列空间中的基向量维数为4（行数为4）.</p>
 <p>那么向量空间维数（无关向量的个数）和基向量的维数（行数）的关系是什么？</p>
 <p>我们把列空间的3个无关向量放在一起组成矩阵B来看：</p>
 <script type="math/tex; mode=display">
-B= \begin{bmatrix}   1 & 2 &  4 \\   0 & 1 &  2 \\   0 & 0 &  1 \\   0 & 0 &  0  \end{bmatrix}</script><p>可以看出，<strong>基向量的维数&gt;=向量空间的维数。也即 行数m&gt;=n。</strong>因为由基向量组成的向量空间中（也就是基向量组成的矩阵），一旦列数大于行数，会出现自由（线性有关）变量，那么这个矩阵的列就没有办法作为一组基。所以能组成基的向量组成的矩阵中行数一定大于等于列数。如何理解呢？如$R^3$：</p>
+B= \begin{bmatrix}   1 & 2 &  4 \\   0 & 1 &  2 \\   0 & 0 &  1 \\   0 & 0 &  0 \\  \end{bmatrix}</script><p>可以看出，<strong>基向量的维数&gt;=向量空间的维数。也即 行数m&gt;=n。</strong>因为由基向量组成的向量空间中（也就是基向量组成的矩阵），一旦列数大于行数，会出现自由（线性有关）变量，那么这个矩阵的列就没有办法作为一组基。所以能组成基的向量组成的矩阵中行数一定大于等于列数。如何理解呢？如$R^3$：</p>
 <p>它代表所有由3维向量组成的空间，即所有含有3个元素的向量。但这与它可以由4维向量组成不矛盾，如这么一组基：</p>
 <script type="math/tex; mode=display">
 \left[
@@ -210,5 +210,20 @@ B= \begin{bmatrix}   1 & 2 &  4 \\   0 & 1 &  2 \\   0 & 0 &  1 \\   0 & 0 &  0 
   <span class="copyright">版权所有 @Liu Jia</span>
 </footer>
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
