@@ -155,6 +155,8 @@ B= \begin{bmatrix}   1 & 2 &  4 \\   0 & 1 &  2 \\   0 & 0 &  1 \\   0 & 0 &  0 
   </article>
   <footer class="f-cf">
     
+      <a href="/Landerku.github.io/2019/05/20/Hexo支持Mathjax数学公式以及解决公式与文字重叠/" class="link f-fl">⟵Hexo支持Mathjax数学公式以及解决公式与文字重叠</a>
+    
     
       <a href="/Landerku.github.io/2019/05/18/麻省理工线代笔记：空间基坐标的线性代换/" class="link f-fr">麻省理工线代笔记：空间基坐标的线性代换⟶</a>
     
@@ -214,5 +216,20 @@ B= \begin{bmatrix}   1 & 2 &  4 \\   0 & 1 &  2 \\   0 & 0 &  1 \\   0 & 0 &  0 
   <span class="copyright">版权所有 @Liu Jia</span>
 </footer>
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

@@ -66,6 +66,17 @@
   <div class="project-card">
   
   <div class="ctnWrap">
+    <a href="/Landerku.github.io/2019/05/20/Hexo支持Mathjax数学公式以及解决公式与文字重叠/" class="title">Hexo支持Mathjax数学公式以及解决公式与文字重叠</a>
+    <section class="desc">
+  
+</section>
+    <p class="sub">5月 20, 2019</p>
+  </div>
+</div>
+
+  <div class="project-card">
+  
+  <div class="ctnWrap">
     <a href="/Landerku.github.io/2019/05/19/子空间、向量空间维数和基向量维数一些补充/" class="title">子空间、向量空间维数和基向量维数一些补充</a>
     <section class="desc">
   
@@ -105,5 +116,20 @@
   <span class="copyright">版权所有 @Liu Jia</span>
 </footer>
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
