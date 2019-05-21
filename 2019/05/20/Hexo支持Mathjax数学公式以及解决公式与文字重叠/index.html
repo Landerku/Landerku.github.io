@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="柏舟">
 <meta property="og:description" content="在这里记录一下长达四五天的踩坑记录。当时为了记笔记想弄个个人博客，搭好了发现在hexo里使用数学公式Mathjax尤其困难，这对我一个正在复习线性代数的人简直是毁灭性打击。于是我硬要跟它刚……再于是就有了这么一篇文章，诸位笑纳: )   刚开始我的hexo直接是不显示各种公式，后来百度了一下知道了是缺少渲染引擎和插件。具体原理可以参考这里：hexo next主题解决无法显示数学公式   相信你">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-20T15:22:05.511Z">
+<meta property="og:updated_time" content="2019-05-21T05:38:42.101Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo支持Mathjax数学公式以及解决公式与文字重叠">
 <meta name="twitter:description" content="在这里记录一下长达四五天的踩坑记录。当时为了记笔记想弄个个人博客，搭好了发现在hexo里使用数学公式Mathjax尤其困难，这对我一个正在复习线性代数的人简直是毁灭性打击。于是我硬要跟它刚……再于是就有了这么一篇文章，诸位笑纳: )   刚开始我的hexo直接是不显示各种公式，后来百度了一下知道了是缺少渲染引擎和插件。具体原理可以参考这里：hexo next主题解决无法显示数学公式   相信你">
@@ -104,30 +104,8 @@
 <p>找到<a href="http://docs.mathjax.org/en/latest/output.html" target="_blank" rel="noopener">mathjax官网</a>，上面给了关于输出格式的说明，我们需要使用这个代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jax: [&quot;input/TeX&quot;,&quot;output/CommonHTML&quot;]</span><br></pre></td></tr></table></figure>
 <p>说到输出格式的控制，实际上这也是mathjax的配置的一部分。官网上给出了很多种配置mathjax的方法，我们选择使用网页本身加载配置，这种在使用cdn链接mathjax的情况下最方便，也适用于下载到本地的情况。但这种情况必须要在页面加载mathjax之前加载，所以修改之前创建的mathjax.ejs文件的配置部分，参考我的：</p>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    "CommonHTML": { 
-        preferredFont: "TeX", 
-        availableFonts: ["STIX","TeX"], 
-        linebreaks: { automatic:true }, 
-        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) 
-    },
-    tex2jax: { 
-        inlineMath: [ ["$", "$"], ["\\(","\\)"] ], 
-        processEscapes: true, 
-        ignoreClass: "tex2jax_ignore|dno",
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {  
-        equationNumbers: { autoNumber: "AMS" },
-        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, 
-        Macros: { href: "{}" } 
-    },
-    messageStyle: "none"
-    }); 
-</script>
-
-<p>在第三行更改需要的格式即可。此时重启hexo ，应该可以解决了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- MathJax配置，可通过单美元符号书写行内公式等 --&gt;</span><br><span class="line">&lt;script type=&quot;text/x-mathjax-config&quot;&gt;</span><br><span class="line">    MathJax.Hub.Config(&#123;</span><br><span class="line">    &quot;CommonHTML&quot;: &#123; </span><br><span class="line">        preferredFont: &quot;TeX&quot;, </span><br><span class="line">        availableFonts: [&quot;STIX&quot;,&quot;TeX&quot;], </span><br><span class="line">        linebreaks: &#123; automatic:true &#125;, </span><br><span class="line">        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) </span><br><span class="line">    &#125;,</span><br><span class="line">    tex2jax: &#123; </span><br><span class="line">        inlineMath: [ [&quot;$&quot;, &quot;$&quot;], [&quot;\\(&quot;,&quot;\\)&quot;] ], </span><br><span class="line">        processEscapes: true, </span><br><span class="line">        ignoreClass: &quot;tex2jax_ignore|dno&quot;,</span><br><span class="line">        skipTags: [&apos;script&apos;, &apos;noscript&apos;, &apos;style&apos;, &apos;textarea&apos;, &apos;pre&apos;, &apos;code&apos;]</span><br><span class="line">    &#125;,</span><br><span class="line">    TeX: &#123;  </span><br><span class="line">        equationNumbers: &#123; autoNumber: &quot;AMS&quot; &#125;,</span><br><span class="line">        noUndefined: &#123; attributes: &#123; mathcolor: &quot;red&quot;, mathbackground: &quot;#FFEEEE&quot;, mathsize: &quot;90%&quot; &#125; &#125;, </span><br><span class="line">        Macros: &#123; href: &quot;&#123;&#125;&quot; &#125; </span><br><span class="line">    &#125;,</span><br><span class="line">    messageStyle: &quot;none&quot;</span><br><span class="line">    &#125;); </span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;!-- 给MathJax元素添加has-jax class --&gt;</span><br><span class="line">&lt;script type=&quot;text/x-mathjax-config&quot;&gt;</span><br><span class="line">    MathJax.Hub.Queue(function() &#123;</span><br><span class="line">        var all = MathJax.Hub.getAllJax(), i;</span><br><span class="line">        for(i=0; i &lt; all.length; i += 1) &#123;</span><br><span class="line">            all[i].SourceElement().parentNode.className += &apos; has-jax&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;!-- 通过连接CDN加载MathJax的js代码 --&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; async</span><br><span class="line">  src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>在<strong>第三行</strong>更改需要的格式即可。此时重启hexo ，应该可以解决了。</p>
 
   </article>
   <footer class="f-cf">
@@ -155,5 +133,20 @@
   <span class="copyright">版权所有 @Liu Jia</span>
 </footer>
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
